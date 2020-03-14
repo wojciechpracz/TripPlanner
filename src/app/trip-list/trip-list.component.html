@@ -1,0 +1,9 @@
+<p>
+  trip-list works!
+</p>
+
+<ul>
+  <li *ngFor="let trip of trips">
+    <a [routerLink]="['/trips',trip.id]" routerLinkActive="active">{{trip.name}}</a>
+  </li>
+</ul>

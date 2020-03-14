@@ -1,0 +1,25 @@
+[
+  {
+    "productId": 1,
+    "productName": "Bałkany",
+    "begins": "2020-07-07",
+    "ends": "2020-07-20",
+    "description": "Niesamowita podróż po bałkanach"
+  },
+  {
+    "productId": 1,
+    "productName": "Turcja",
+    "begins": "2020-06-07",
+    "ends": "2020-07-05",
+    "description": "Niesamowita podróż po Turcji"
+  },
+  {
+    "productId": 1,
+    "productName": "Hiszpania",
+    "begins": "2020-11-07",
+    "ends": "2020-12-20",
+    "description": "Niesamowita podróż po Hiszpani"
+  }
+]
+
+
