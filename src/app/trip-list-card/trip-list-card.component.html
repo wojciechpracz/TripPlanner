@@ -1,0 +1,13 @@
+<a [routerLink]="['/trips',trip.id]">
+  <div [ngClass]="hoverClass" (mouseover)="changeStyle($event)" (mouseout)="changeStyle($event)" 
+    class="card border-info mb-3">
+    <div class="card-header">{{trip.title}}</div>
+    <div class="card-body">
+      <h6 class="card-title">{{trip.startDate}} - {{trip.endDate}}</h6>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+  </div>
+</a>

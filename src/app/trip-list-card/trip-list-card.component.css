@@ -1,0 +1,9 @@
+.card:hover {
+    cursor: pointer;
+}
+
+.card-header {
+    font-weight: 700;
+    text-align: center;
+}
+

@@ -1,16 +1,9 @@
-<p>
-  trip-list works!
-</p>
-
-<ul>
-  <div class="col-md-6 d-inline-block">
-    <li *ngFor="let trip of trips">
-      <h3>
-        <a [routerLink]="['/trips',trip.id]" routerLinkActive="active">{{trip.title}}</a>
-      </h3>
-      <p>
-        {{trip.description}}
-      </p>
-    </li>
+<div class="container-fluid">
+  <div class="row m-3">
+    <div class="col-lg-4 col-sm-6"*ngFor="let trip of trips">
+      <app-trip-list-card 
+        [trip] = "trip">
+      </app-trip-list-card>
+    </div>
   </div>
-</ul>
+</div>

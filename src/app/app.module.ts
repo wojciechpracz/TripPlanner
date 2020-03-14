@@ -11,6 +11,7 @@ import { TripDetailsComponent } from './trip-details/trip-details.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 import { BsDropdownModule } from 'ngx-bootstrap';
+import { TripListCardComponent } from './trip-list-card/trip-list-card.component';
 
 const appRoutes: Routes = [
    {path: 'trips', component: TripListComponent},
@@ -22,21 +23,22 @@ const appRoutes: Routes = [
       AppComponent,
       TripListComponent,
       TripDetailsComponent,
-      NavBarComponent
+      NavBarComponent,
+      TripListCardComponent
    ],
    imports: [
       HttpClientModule,
-      // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+            // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
       // and returns simulated server responses.
       // Remove it when a real server is ready to receive requests.
       HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-      ),
-      RouterModule.forRoot(
-         appRoutes
-      ),
-      BrowserModule
-   ],
+         InMemoryDataService, { dataEncapsulation: false }
+         ),
+         RouterModule.forRoot(
+            appRoutes
+         ),
+         BrowserModule
+         ],
    providers: [],
    bootstrap: [
       AppComponent
