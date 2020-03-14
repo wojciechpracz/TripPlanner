@@ -1,14 +1,4 @@
-<div class="viewTripDetails" *ngIf='!editEnabled'>
-  <div class="tripDetails" *ngIf='trip'>
-    <h1 *ngIf='trip'>{{trip.name}}</h1>
-    <p>Początek wyjazdu: {{trip.startDate}}</p>
-    <p>Koniec wyjadzu: {{trip.endDate}}</p>
-  </div>
-</div>
+<p>Początek wyjazdu: {{trip.startDate}}</p>
+<p>Koniec wyjadzu: {{trip.endDate}}</p>
 
-<div class="editTripDetails" *ngIf='editEnabled'>
-  
-</div>
-
-<button mat-button color="primary" (click)='switchEditMode()'>Edytuj</button>
 

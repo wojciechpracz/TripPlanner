@@ -10,6 +10,7 @@ import { TripListComponent } from './trip-list/trip-list.component';
 import { TripDetailsComponent } from './trip-details/trip-details.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 
+import { BsDropdownModule } from 'ngx-bootstrap';
 
 const appRoutes: Routes = [
    {path: 'trips', component: TripListComponent},

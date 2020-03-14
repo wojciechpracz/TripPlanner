@@ -9,9 +9,7 @@ import { TripService } from '../_services/trip.service';
   styleUrls: ['./trip-details.component.css']
 })
 export class TripDetailsComponent implements OnInit {
-
   trip: Trip;
-  editEnabled: boolean;
 
   constructor(
     private route: ActivatedRoute,
@@ -19,7 +17,6 @@ export class TripDetailsComponent implements OnInit {
     private tripService: TripService) { }
 
   ngOnInit() {
-    this.editEnabled = false;
     this.route.params.subscribe(
       params => {
         this.tripService.getTrip(params.id).subscribe((data: Trip) => {
@@ -27,9 +24,5 @@ export class TripDetailsComponent implements OnInit {
         });
       }
     );
-  }
-
-  switchEditMode() {
-    this.editEnabled = !this.editEnabled;
   }
 }
