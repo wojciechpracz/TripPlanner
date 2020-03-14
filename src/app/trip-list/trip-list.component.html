@@ -3,7 +3,14 @@
 </p>
 
 <ul>
-  <li *ngFor="let trip of trips">
-    <a [routerLink]="['/trips',trip.id]" routerLinkActive="active">{{trip.name}}</a>
-  </li>
+  <div class="col-md-6 d-inline-block">
+    <li *ngFor="let trip of trips">
+      <h3>
+        <a [routerLink]="['/trips',trip.id]" routerLinkActive="active">{{trip.title}}</a>
+      </h3>
+      <p>
+        {{trip.description}}
+      </p>
+    </li>
+  </div>
 </ul>

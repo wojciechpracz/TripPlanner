@@ -1,5 +1,5 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { Trip } from './interfaces/trip';
+import { Trip } from './models/trip';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -8,16 +8,26 @@ import { Injectable } from '@angular/core';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const trips = [
-      { id: 11, name: 'Warszawa', startDate: '2020-09-30', endDate: '2020-10-29' },
-      { id: 12, name: 'Lizbona', startDate: '2020-09-30', endDate: '2020-10-29' },
-      { id: 13, name: 'Londyn', startDate: '2020-09-30', endDate: '2020-10-29' },
-      { id: 14, name: 'Rzym', startDate: '2020-09-30', endDate: '2020-10-29' },
-      { id: 15, name: 'Berlin', startDate: '2020-09-30', endDate: '2020-10-29' },
-      { id: 16, name: 'Praga', startDate: '2020-09-30', endDate: '2020-10-29' },
-      { id: 17, name: 'Bratysława', startDate: '2020-09-30', endDate: '2020-10-29' },
-      { id: 18, name: 'Zagrzeb', startDate: '2020-09-30', endDate: '2020-10-29' },
-      { id: 19, name: 'Sydney', startDate: '2020-09-30', endDate: '2020-10-29' },
-      { id: 20, name: 'Toronto', startDate: '2020-09-30', endDate: '2020-10-29' }
+      { id: 11, title: 'Warsaw', startDate: '2020-09-30',
+        endDate: '2020-10-29', formOfTransport: 'bus', description: 'Amazing adventure'},
+      { id: 12, title: 'Lisbon', startDate: '2020-09-30',
+        endDate: '2020-10-29', formOfTransport: 'plane', description: 'Amazing adventure' },
+      { id: 13, title: 'London', startDate: '2020-09-30',
+        endDate: '2020-10-29', formOfTransport: 'car', description: 'Amazing adventure' },
+      { id: 14, title: 'Rome', startDate: '2020-09-30',
+        endDate: '2020-10-29', formOfTransport: 'train', description: 'Amazing adventure' },
+      { id: 15, title: 'Berlin', startDate: '2020-09-30',
+        endDate: '2020-10-29', formOfTransport: 'car', description: 'Amazing adventure'  },
+      { id: 16, title: 'Prague', startDate: '2020-09-30',
+        endDate: '2020-10-29', formOfTransport: 'car', description: 'Amazing adventure'  },
+      { id: 17, title: 'Bratislava', startDate: '2020-09-30',
+        endDate: '2020-10-29', formOfTransport: 'car', description: 'Amazing adventure'  },
+      { id: 18, title: 'Zagreb', startDate: '2020-09-30',
+        endDate: '2020-10-29', formOfTransport: 'car', description: 'Amazing adventure'  },
+      { id: 19, title: 'Sydney', startDate: '2020-09-30',
+        endDate: '2020-10-29', formOfTransport: 'car', description: 'Amazing adventure'  },
+      { id: 20, title: 'Toronto', startDate: '2020-09-30',
+        endDate: '2020-10-29', formOfTransport: 'car', description: 'Amazing adventure'  }
     ];
     return {trips};
   }
