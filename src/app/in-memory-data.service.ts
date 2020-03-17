@@ -9,9 +9,9 @@ export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const trips = [
       { id: 11, title: 'Warsaw', startDate: '2020-09-30',
-        endDate: '2020-10-29', formOfTransport: 'bus', description: 'Amazing adventure'},
+        endDate: '2020-10-29', formOfTransport: 'bus', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec at elementum libero. Quisque ornare odio quis velit rutrum, id pellentesque lorem consectetur. Vestibulum luctus ultricies pretium. In luctus ex a commodo vulputate. Etiam magna mauris, tristique vitae lectus in, dictum luctus leo. Nam vel rutrum ante, id posuere mi. Nullam fermentum turpis eu tellus cursus, et maximus tortor lacinia. Aliquam sed gravida risus.'},
       { id: 12, title: 'Lisbon', startDate: '2020-09-30',
-        endDate: '2020-10-29', formOfTransport: 'plane', description: 'Amazing adventure' },
+        endDate: '2020-10-29', formOfTransport: 'plane', description: 'Pellentesque eget purus et tellus auctor efficitur. Ut aliquam, quam eget venenatis imperdiet, nisi quam rhoncus tellus, nec eleifend arcu lorem et orci. Fusce tellus turpis, cursus nec felis at, pulvinar blandit magna. Nullam sit amet tortor ornare, feugiat libero a, tristique ante. ' },
       { id: 13, title: 'London', startDate: '2020-09-30',
         endDate: '2020-10-29', formOfTransport: 'car', description: 'Amazing adventure' },
       { id: 14, title: 'Rome', startDate: '2020-09-30',
