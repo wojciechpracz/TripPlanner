@@ -13,10 +13,14 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { BsDropdownModule } from 'ngx-bootstrap';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { TripListCardComponent } from './trip-list-card/trip-list-card.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TripNewComponent } from './trip-new/trip-new.component';
 
 const appRoutes: Routes = [
    {path: 'trips', component: TripListComponent},
-   {path: 'trips/:id', component: TripDetailsComponent}
+   {path: 'trips/new', component: TripNewComponent, pathMatch: 'full'},
+   {path: 'trips/:id', component: TripDetailsComponent},
+
 ]
 
 @NgModule({
@@ -25,7 +29,8 @@ const appRoutes: Routes = [
       TripListComponent,
       TripDetailsComponent,
       NavBarComponent,
-      TripListCardComponent
+      TripListCardComponent,
+      TripNewComponent
    ],
    imports: [
       HttpClientModule,
@@ -35,8 +40,10 @@ const appRoutes: Routes = [
       HttpClientInMemoryWebApiModule.forRoot(
          InMemoryDataService, { dataEncapsulation: false } ),
          RouterModule.forRoot(appRoutes),
-         BrowserModule,
-         TabsModule.forRoot()
+      BrowserModule,
+      BrowserAnimationsModule,
+      TabsModule.forRoot(),
+      BsDropdownModule.forRoot()
    ],
    providers: [],
    bootstrap: [
