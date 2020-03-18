@@ -1,3 +1,32 @@
-<p>
-  trip-new works!
-</p>
+<div class="container mb-3">
+  <h1 class="text-center text-success mt-5 mb-4">Create an unforgettable trip!</h1>
+  <form #newTripForm="ngForm" (ngSubmit)="createTrip()">
+    <div class="form-group">
+      <label for="inpTitle" class="h5">Ttile</label>
+      <input type="text" class="form-control" id="inpTitle" name="title" [(ngModel)]="model.title" placeholder="Enter title">
+      <small id="helpTitle" class="form-text text-muted">Give this trip an awesome title!</small>
+    </div>
+    <div class="form-group mt-3">
+      <label for="inpDescription" class="h5">Description</label>
+      <textarea class="form-control" id="inpDescription" rows="3" name="inpDescription" [(ngModel)] = "model.description"></textarea>
+      <small id="helpDescription" class="form-text text-muted">Let your friends know about a ideas concerning this trip.</small>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-12 col-md-4 form-group mb-5">
+        <label for="inpDescription" class="h5">Choose trip time.</label>
+        <input type="text"
+              placeholder="Select date"
+              class="form-control"
+              bsDaterangepicker
+              [(ngModel)] = "selectedDateRange"
+              name="tripTime">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inpTransport" class="h5">Forms of transport</label>
+      <input type="text" class="form-control" id="inpTransport" name="inpTransport" [(ngModel)]="model.formOfTransport">
+      <small id="helpTitle" class="form-text text-muted">List the forms of transport you are planning to use</small>
+    </div>
+    <button class="btn btn-success" type="submit">Create Trip</button>
+  </form>
+</div>

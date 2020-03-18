@@ -3,11 +3,11 @@
     class="card border-info mb-3">
     <div class="card-header">{{trip.title}}</div>
     <div class="card-body">
-      <h6 class="card-title">{{trip.startDate}} - {{trip.endDate}}</h6>
+      <h6 class="card-title">{{trip.startDate | date}} - {{trip.endDate | date}}</h6>
       <p class="card-text">{{trip.description}}</p>
     </div>
     <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
+      <small class="text-muted">{{trip.dateAdded | date}}</small>
     </div>
   </div>
 </a>

@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule} from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { TripListComponent } from './trip-list/trip-list.component';
@@ -15,6 +16,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { TripListCardComponent } from './trip-list-card/trip-list-card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TripNewComponent } from './trip-new/trip-new.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 const appRoutes: Routes = [
    {path: 'trips', component: TripListComponent},
@@ -43,7 +45,9 @@ const appRoutes: Routes = [
       BrowserModule,
       BrowserAnimationsModule,
       TabsModule.forRoot(),
-      BsDropdownModule.forRoot()
+      BsDropdownModule.forRoot(),
+      BsDatepickerModule.forRoot(),
+      FormsModule
    ],
    providers: [],
    bootstrap: [

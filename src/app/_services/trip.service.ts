@@ -9,9 +9,14 @@ import { map } from 'rxjs/operators';
 })
 export class TripService {
 
-  constructor(private http: HttpClient) {}
+  httpOptions = {
+    headers: new HttpHeaders({'Content-Type': 'application/json'})
+  };
 
   private tripsUrl = 'api/trips';
+
+  constructor(private http: HttpClient) {}
+
 
   public getTrips(): Observable<Trip[]> {
     return this.http.get<Trip[]>(this.tripsUrl);
@@ -19,6 +24,10 @@ export class TripService {
 
   public getTrip(id): Observable<Trip> {
     return this.http.get<Trip>(this.tripsUrl + '/' + id);
+  }
+
+  public createTrip(trip): Observable<any> {
+    return this.http.post(this.tripsUrl, trip, this.httpOptions);
   }
 
 }
