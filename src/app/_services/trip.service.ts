@@ -29,5 +29,4 @@ export class TripService {
   public createTrip(trip): Observable<any> {
     return this.http.post(this.tripsUrl, trip, this.httpOptions);
   }
-
-}
+ }

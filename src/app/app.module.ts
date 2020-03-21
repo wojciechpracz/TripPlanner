@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { FormsModule } from '@angular/forms';
@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { TripListComponent } from './trip-list/trip-list.component';
 import { TripDetailsComponent } from './trip-details/trip-details.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { ErrorInterceptorService } from './_services/error-interceptor.service';
 
 import { BsDropdownModule } from 'ngx-bootstrap';
 import { TabsModule } from 'ngx-bootstrap/tabs';
@@ -23,7 +24,7 @@ const appRoutes: Routes = [
    {path: 'trips/new', component: TripNewComponent, pathMatch: 'full'},
    {path: 'trips/:id', component: TripDetailsComponent},
 
-]
+];
 
 @NgModule({
    declarations: [
@@ -49,7 +50,11 @@ const appRoutes: Routes = [
       BsDatepickerModule.forRoot(),
       FormsModule
    ],
-   providers: [],
+   providers: [
+      {provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptorService,
+      multi: true}
+   ],
    bootstrap: [
       AppComponent
    ]

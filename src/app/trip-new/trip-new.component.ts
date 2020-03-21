@@ -30,10 +30,6 @@ export class TripNewComponent implements OnInit {
     this.model.endDate = this.selectedDateRange[1];
     this.model.dateAdded = new Date();
 
-    this.tripService.createTrip(this.model).subscribe(data => {
-      this.tripService.getTrips().subscribe((ret) => {
-        console.log(ret);
-      })
-    });
+    this.tripService.createTrip(this.model);
   }
 }
