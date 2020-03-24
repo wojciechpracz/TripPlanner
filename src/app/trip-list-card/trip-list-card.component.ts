@@ -10,10 +10,13 @@ export class TripListCardComponent implements OnInit {
 
   @Input() trip: Trip;
   hoverClass = '';
+  imgSrc = '';
 
   constructor() { }
 
   ngOnInit() {
+    this.imgSrc = 'assets/images/' + ((Math.round((Math.random() * 10)) % 9) + 1) + '.jpg';
+    console.log(this.imgSrc);
   }
 
   changeStyle($event) {

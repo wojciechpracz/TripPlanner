@@ -1,13 +1,14 @@
 <a [routerLink]="['/trips',trip.id]">
-  <div [ngClass]="hoverClass" (mouseover)="changeStyle($event)" (mouseout)="changeStyle($event)" 
-    class="card border-info mb-3">
-    <div class="card-header">{{trip.title}}</div>
-    <div class="card-body">
-      <h6 class="card-title">{{trip.startDate | date}} - {{trip.endDate | date}}</h6>
-      <p class="card-text">{{trip.description}}</p>
+    <div [ngClass]="hoverClass" (mouseover)="changeStyle($event)" (mouseout)="changeStyle($event)" 
+      class="card mb-3">
+      <img class="card-img-top" src="{{imgSrc}}" alt="Card image cap">
+      <div class="card-body">
+        <h3 class="card-title">{{trip.title}}</h3>
+        <p class="card-text">{{trip.startDate | date}} - {{trip.endDate | date}}</p>
+        <p class="card-text"> {{ (trip.description.length>80)? (trip.description | slice:0:80)+'..':(trip.description) }}</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Date added: {{trip.dateAdded | date}}</small>
+      </div>
     </div>
-    <div class="card-footer">
-      <small class="text-muted">{{trip.dateAdded | date}}</small>
-    </div>
-  </div>
-</a>
+  </a>

@@ -18,12 +18,13 @@ import { TripListCardComponent } from './trip-list-card/trip-list-card.component
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TripNewComponent } from './trip-new/trip-new.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { HomeComponent } from './home/home.component';
 
 const appRoutes: Routes = [
+   {path: '', component: HomeComponent},
    {path: 'trips', component: TripListComponent},
    {path: 'trips/new', component: TripNewComponent, pathMatch: 'full'},
    {path: 'trips/:id', component: TripDetailsComponent},
-
 ];
 
 @NgModule({
@@ -33,7 +34,8 @@ const appRoutes: Routes = [
       TripDetailsComponent,
       NavBarComponent,
       TripListCardComponent,
-      TripNewComponent
+      TripNewComponent,
+      HomeComponent
    ],
    imports: [
       HttpClientModule,
