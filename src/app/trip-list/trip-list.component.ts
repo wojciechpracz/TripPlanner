@@ -18,7 +18,6 @@ export class TripListComponent implements OnInit {
     this.tripService.getTrips().subscribe((data: Trip[]) => {
       this.trips = data;
     });
-    console.log(this.trips);
   }
 
 }

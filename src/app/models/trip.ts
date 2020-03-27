@@ -1,3 +1,5 @@
+import { Photo } from './photo';
+
 export interface Trip {
     id?: number;
     title: string;
@@ -6,4 +8,5 @@ export interface Trip {
     endDate: Date;
     formOfTransport: string;
     description: string;
+    tripPhotos?: Photo[];
   }
